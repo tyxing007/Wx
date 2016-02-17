@@ -8,9 +8,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-
 import org.apache.http.client.ClientProtocolException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,13 +18,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import redis.clients.jedis.Jedis;
 
-import com.wwu.wx.model.UserInfo;
 import com.wwu.wx.util.CoreService;
 import com.wwu.wx.util.RedisUtil;
 import com.wwu.wx.util.SerializeUtil;
 import com.wwu.wx.util.SignUtil;
-import com.wwu.wx.util.TokenProxy;
-import com.wwu.wx.wxpay.HttpUtil;
 
 
 @Controller

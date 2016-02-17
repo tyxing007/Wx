@@ -101,8 +101,6 @@ public class WeiXinPayController extends BaseController {
 			sendTemplateMsg(requestMap);
 			String attach = requestMap.get("attach");
 			
-			System.out.println(".................{"+attach+"}............");
-			
 			if (attach == null || attach.indexOf("_") == -1) {
 				outPrintFail(out);
 				return;
@@ -110,7 +108,6 @@ public class WeiXinPayController extends BaseController {
 
 
 			String type = attach.split("_")[1];
-			System.out.println(".................{"+type+"}............");
 			int money = Integer.parseInt(requestMap.get("total_fee"));
 			if (Model.product.toString().equals(WxConfig.MODEL)) {
 				money = money / 100;
@@ -120,7 +117,6 @@ public class WeiXinPayController extends BaseController {
 			}
 			// 1=维币充值 2=微信充值-成为会员
 			if ("1".equals(type)) {
-				System.out.println(".................{"+"充值"+"}............");
 			} else {
 				//1=成功2=失败
 			}

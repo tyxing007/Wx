@@ -48,11 +48,9 @@ public class BaseController {
 	 * @return UserInfo
 	 */
 	protected  UserInfo getUser(HttpServletRequest request){
-		System.out.println("-----------basecontroller---getUser--------------------------"); 
 		if(request.getSession().getAttribute(Cts.USER_IN_SESSION)!=null){
 			return (UserInfo)request.getSession().getAttribute(Cts.USER_IN_SESSION);
 		}
-		System.out.println("=========base 获取usersession ==null  ==="); 
 		return null;
 	}
 	
@@ -94,7 +92,6 @@ public class BaseController {
 		String code = getCode(request);
 		model.addAttribute("view",  request.getServletPath());
 		model.addAttribute("code",code);
-		System.err.println("========【code】========"+code);
 		return "/loading";
 	}
 	
